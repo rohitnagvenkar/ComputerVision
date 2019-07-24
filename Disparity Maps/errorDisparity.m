@@ -1,0 +1,13 @@
+load('disparity.mat');
+eT1 = double(mean2(L(:)));
+eG1 = double(mean2(disparity(:)));
+eT2 = double(min(L(:)));
+eG2 = double(min(disparity(:)));
+eT3 = double(max(L(:)));
+eG3 = double(max(disparity(:)));
+eT4 = double(std2(L(:)));
+eG4 = double(std2(disparity(:)));
+fprintf('Mean error %f \n', abs(eT1 - eG1));
+fprintf('Min value error %f \n', abs(eT2 - eG2));
+fprintf('Max value error %f \n', abs(eT3 - eG3));
+fprintf('Standard deviation error %f \n', abs(eT4 - eG4));
